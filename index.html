@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+
+    <div id="background"></div>
+
+    <div id="pomodoro">
+        <div class="btn-icon" id="toggle-settings">
+            <button class="btn-button">Settings</button>
+        </div>
+
+        <div id="timer-progress">
+            <svg class="circle-timer" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" class="circle-background"></circle>
+                <linearGradient id="linearColors" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#FFF886"/>
+                    <stop offset="15%" stop-color="#FDD819"/>
+                    <stop offset="95%" stop-color="#F05F57"/>
+                </linearGradient>
+                <circle cx="50" cy="50" r="45" class="circle-progress" stroke="url(#linearColors)"></circle>
+                <text id="timer-time" x="50" y="50" text-anchor="middle" dy=".3em" font-size="18">25:00</text>
+                <text id="timer-pause" x="50" y="68" text-anchor="middle" dy=".3em" font-size="7">Pause</text>
+                <text id="timer-rest" x="50" y="68" text-anchor="middle" dy=".3em" font-size="7">Rest</text>
+            </svg>
+        </div>
+
+        <div id="timer-sessions">
+            <div id="completed-text">Completed pomodoro:</div>
+            <div id="completed-count">0</div>
+        </div>
+
+        <div id="timer-functions">
+            <div id="timer-settings">
+                <div class="btn-icon" id="close-settings">
+                    <button class="btn-button">Close</button>
+                </div>
+                <form action="" id="timer-form">
+                    <p id="timer-line">
+                        <label for="work-duration">Pomodoro:</label>
+                        <input type="number" id="work-duration" value="25" min="1">
+                    </p>
+                    <p id="timer-line">
+                        <label for="rest-duration">Rest:</label>
+                        <input type="number" id="rest-duration" value="5" min="1">
+                    </p>
+                </form>
+            </div>
+            <!-- <div id="timer-buttons">
+                <button id="pause-btn">P</button>
+                <button id="play-btn">S</button>
+            </div> -->
+        </div>
+    </div>
+
+    <script src="./scripts/main.js" type="module"></script>
+
+</body>
+
+</html>
